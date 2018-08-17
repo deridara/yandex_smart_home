@@ -16,14 +16,6 @@ body {
     font-weight: 600px;
 }
 
-header {
-    padding: 30px 40px;
-    border-bottom: 1px solid #aaa;
-    height: 55px;
-    grid-area: header;
-    box-sizing: border-box;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -42,22 +34,37 @@ a:hover {
     margin: 0 20px 20px 0;
 }
 
+header {
+    padding: 25px 40px;
+    border-bottom: 1px solid #aaa;
+    height: 90px;
+    grid-area: header;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
 .logo,
 nav {
     display: inline-block;
 }
 
 .logo {
-    margin: 0 30px 0 0;
+    margin: 0px 40px 0 0;
+    height: 35px;
+    width: 108px;
+    background: url('../img/Yandex_dom@1x.png') no-repeat bottom;
+}
+
+nav {
 }
 
 .nav_link {
     display: inline-block;
-    padding: 5px 10px;
+    height: 30px;
+    padding: 0px 10px;
     opacity: 0.6;
     font-size: 16px;
     color: #333333;
-    line-height: 20px;
     font-weight: 600;
 }
 
@@ -103,19 +110,91 @@ main {
     overflow-y: scroll;
     overflow-x: hidden;
     margin-right: -50px;
-    /* maximum width of scrollbar */
     padding-right: 50px;
 }
 
 .script_wrapper {
+    position: relative;
     grid-area: scripts;
     background: #ddd;
-    padding: 20px 20px 0 10px;
+    padding: 20px 0 0 10px;
+    box-sizing: border-box;
+/*    overflow-y: hidden;*/
 }
 
 .script_list {
-    overflow-x: auto;
+    display: block;
+    height: 360px;
+    position: relative;
 }
+
+.script_list_page_wrapper {
+    height: 100%;
+    width:100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.script_list_page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 100%;
+    margin-left: 0;
+    transition: left 500ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+.script_list_page:first-child {
+    left: 0;
+}
+
+
+/*  слайдер сценариев  */
+
+.script_list > input,
+.script_list > input + label,
+.script_list > input + label + label {
+    display: none;
+}
+
+.script_list > input:checked + label,
+.script_list > input:checked + label + label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    opacity: 0.4;
+    transition: opacity 0.8s ease-out 0s;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.script_list > input:checked + label:hover,
+.script_list > input:checked + label + label:hover {
+    opacity: 0.6;
+}
+
+.script_list > input:checked + label {
+    left: 0px;
+    background: url('https://lh3.googleusercontent.com/-tacAA4lVYgc/VeVDqFrDRRI/AAAAAAAAAT4/RBongekAUqI/s800-Ic42/prev.png')
+}
+
+.script_list > input:checked + label + label {
+    right: 0px;
+    background: url('https://lh3.googleusercontent.com/-gy6RMZnCdAc/VeVDqJF1S5I/AAAAAAAAAT0/D4nN8T9RGro/s800-Ic42/next.png')
+}
+
+.script_list > input:nth-of-type(2):checked ~ .script_list_page_wrapper > .script_list_page {
+    left: 0;
+}
+
+.script_list > input:nth-of-type(2):checked ~ .script_list_page_wrapper > .script_list_page:first-child {
+    left: -100%;
+}
+
+/*  -----------------  */
 
 .script_element {
     height: 100px;
@@ -124,15 +203,13 @@ main {
 .device_wrapper {
     grid-area: devices;
     background: #ccc;
-    padding: 0 0 0px 40px;
+    padding: 0px 0 0px 0px;
     overflow-y: hidden;
-    overflow-x: auto;
 }
 
 .device_heading {
     display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 30px
+    margin: 12px 0 30px 40px;
 }
 
 .device_filter_list,
@@ -160,6 +237,10 @@ main {
 
 .device_element {
     margin-bottom: 0;
+}
+
+.device_element:first-child {
+    margin-left: 40px;
 }
 
 footer {

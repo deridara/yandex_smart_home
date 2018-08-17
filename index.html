@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Яндекс Дом</title>
-    <link rel="stylesheet" href="css/normilize.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,11 +12,10 @@
     <div class="grid-wrapper">
         <header>
             <div class="logo">
-                <a href="#" class='logo_yandex'>Яндекс</a>
-                <a href="#" class="logo_dom">Дом</a>
+
             </div>
             <nav>
-                <a href="#" class='nav_link nav_link_active'>Свойства</a>
+                <a href="#" class='nav_link nav_link_active'>Сводка</a>
                 <a href="#" class='nav_link'>Устройства</a>
                 <a href="#" class='nav_link'>Сценарии</a>
             </nav>
@@ -37,15 +36,37 @@
             <div class="script_wrapper">
                 <h2 class='heading script_heading'>Избранные сценарии</h2>
                 <div class="script_list">
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
-                    <div class="element_card script_element"></div>
+
+                    <input type="radio" name="slider" id="slider1" checked="checked">
+                    <label for="slider0"></label>
+                    <label for="slider2"></label>
+
+                    <input type="radio" name="slider" id="slider2">
+                    <label for="slider1"></label>
+                    <label for="slider3"></label>
+
+                    <div class="script_list_page_wrapper">
+                        <div class="script_list_page">
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                        </div>
+                        <div class="script_list_page">
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element"></div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
             <div class="device_wrapper">
                 <h2 class='heading device_heading'>Избранные устройства</h2>
