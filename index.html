@@ -3,64 +3,75 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Яндекс Дом</title>
+    <link rel="stylesheet" href="css/normilize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="#" class='logo_yandex'></a>
-            <a href="#" class="logo_dom"></a>
-        </div>
-        <nav>
-            
-        </nav>
-    </header>
-    <main>
-
-        <div class="basic">
-            <h2 class='heading basic_heading'>Главное</h2>
-            <div class="nearest_scripts">
-                <div class="nearest_scripts_element"></div>
-                <div class="nearest_scripts_element"></div>
-                <div class="nearest_scripts_element"></div>
-                <div class="nearest_scripts_element"></div>
+    <div class="grid-wrapper">
+        <header>
+            <div class="logo">
+                <a href="#" class='logo_yandex'>Яндекс</a>
+                <a href="#" class="logo_dom">Дом</a>
             </div>
-        </div>
-        <div class="scritp_list">
-            <h2 class='heading script_heading'>Избранные сценарии</h2>
-            <div class="script_element"></div>
-            <div class="script_element"></div>
-            <div class="script_element"></div>
-            <div class="script_element"></div>
-            <div class="script_element"></div>
-        </div>
-        <div class="device-list">
-            <h2 class='heading device_heading'>Избранные устройства</h2>
-            <ul dev-filter>
-                <li>Все</li>
-                <li>Кухня</li>
-                <li>Зал</li>
-                <li>Лампочки</li>
-                <li>Камеры</li>
-            </ul>
-            <div class="device_element"></div>
-            <div class="device_element"></div>
-            <div class="device_element"></div>
-            <div class="device_element"></div>
-            <div class="device_element"></div>
-        </div>
-    </main>
-    <footer>
-        <ul class='footer-list'>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <a href="#" class='copy'>&copy; 2001-2017 ООО &laquo;Яндекс&raquo;</a>
-    </footer>
+            <nav>
+                <a href="#" class='nav_link nav_link_active'>Свойства</a>
+                <a href="#" class='nav_link'>Устройства</a>
+                <a href="#" class='nav_link'>Сценарии</a>
+            </nav>
+        </header>
+        <main>
+
+            <div class="basic_wrapper">
+                <h2 class='heading basic_heading'>Главное</h2>
+                <div class="basic">
+                    <div class="nearest_scripts">
+                        <div class="element_card nearest_scripts_element"></div>
+                        <div class="element_card nearest_scripts_element"></div>
+                        <div class="element_card nearest_scripts_element"></div>
+                        <div class="element_card nearest_scripts_element"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="script_wrapper">
+                <h2 class='heading script_heading'>Избранные сценарии</h2>
+                <div class="scritp_list">
+                    <div class="element_card script_element"></div>
+                    <div class="element_card script_element"></div>
+                    <div class="element_card script_element"></div>
+                    <div class="element_card script_element"></div>
+                    <div class="element_card script_element"></div>
+                </div>
+            </div>
+            <div class="device_wrapper">
+                <h2 class='heading device_heading'>Избранные устройства</h2>
+                <div class='device_filter_list'>
+                    <div class='device_filter_element device_filter_element_active'>Все</div>
+                    <div class='device_filter_element'>Кухня</div>
+                    <div class='device_filter_element'>Зал</div>
+                    <div class='device_filter_element'>Лампочки</div>
+                    <div class='device_filter_element'>Камеры</div>
+                </div>
+                <div class="device_list">
+                    <div class="element_card device_element"></div>
+                    <div class="element_card device_element"></div>
+                    <div class="element_card device_element"></div>
+                    <div class="element_card device_element"></div>
+                    <div class="element_card device_element"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_links">
+                <a href="#" class="footer_links_element">Помощь</a>
+                <a href="#" class="footer_links_element">Обратная связь</a>
+                <a href="#" class="footer_links_element">Разработчикам</a>
+                <a href="#" class="footer_links_element">Условия использования</a>
+            </div>
+            <a href="#" class='footer_copy'>&copy; 2001-2017 ООО &laquo;Яндекс&raquo;</a>
+        </footer>
+    </div>
 </body>
 
 </html>

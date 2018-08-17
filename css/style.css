@@ -1,0 +1,144 @@
+html,
+body {
+    height: 100%;
+}
+
+.grid-wrapper {
+    height: 99%;
+    display: grid;
+    grid-template: 'header' 90px 'main' 1fr 'footer' 60px / 100%;
+}
+
+header {
+    padding: 20px;
+    border-bottom: 1px solid #aaa;
+    height: 55px;
+    grid-area: header;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: red;
+}
+
+.element_card {
+    height: 120px;
+    width: 200px;
+    border-radius: 20px;
+    background: #F7F7F7;
+    display: inline-block;
+    margin: 0 15px 15px 0;
+}
+
+.logo,
+nav {
+    display: inline-block;
+}
+
+.logo {
+    margin: 0 30px 0 0;
+}
+
+.nav_link {
+    display: inline-block;
+    padding: 5px 10px;
+    opacity: 0.6;
+    font-size: 16px;
+    color: #333333;
+    line-height: 20px;
+}
+
+.nav_link_active {
+    opacity: 1;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template: 'basic scripts' 1fr 'devices devices' 200px /50% 50%;
+
+}
+
+.basic_wrapper {
+    grid-area: basic;
+    background: #eee;
+    padding: 10px 10px 10px 30px;
+    position: relative;
+}
+
+.basic {
+    box-sizing: border-box;
+    background: white;
+    border-radius: 20px;
+    position: absolute;
+    padding: 20px;
+    bottom: 20px;
+    height: 80%;
+    width: 90%;
+}
+
+.nearest_scripts {
+    width: 220px;
+    float: right;
+    position: absolute;
+    right: 20px;
+    height: 100%;
+    overflow-Y: auto;
+    overflow-x: hidden;
+    top: 0;
+    padding-top: 20px;
+}
+
+.script_wrapper {
+    grid-area: scripts;
+    background: #ddd;
+    padding: 10px 10px 10px 30px;
+}
+
+.device_wrapper {
+    grid-area: devices;
+    background: #ccc;
+    padding: 0 30px 0;
+}
+
+.device_heading {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.device_filter_list,
+.device_filter_element {
+    display: inline-block;
+}
+
+.device_filter_element {
+    padding: 8px 15px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    margin: 0 10px 0 0;
+}
+
+.device_filter_element_active {
+    background: #FFD93E;
+}
+
+footer {
+    grid-area: footer;
+    height: 64px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.footer_links {
+    position: absolute;
+}
+
+.footer_copy {
+    position: absolute;
+    right: 10px;
+}
