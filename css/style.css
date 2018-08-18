@@ -4,8 +4,8 @@ body {
     font-family: 'Aral', sans-serif;
 }
 
-.grid-wrapper {
-    height: 99%;
+.grid_wrapper {
+    height: 100%;
     display: grid;
     grid-template: 'header' 90px 'main' 1fr 'footer' 60px / 100%;
 }
@@ -32,6 +32,30 @@ a:hover {
     background: #F7F7F7;
     display: inline-block;
     margin: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.element_card:hover {
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px 1px rgba(197, 186, 186, 0.50);
+    border-radius: 20px;
+}
+
+.inner_menu,
+.inner_menu_element {
+    display: inline-block;
+}
+
+.inner_menu_element {
+    font-size: 14px;
+    padding: 8px 15px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    margin: 0 5px 0 0;
+}
+
+.inner_menu_element_active {
+    background: #FFD93E;
 }
 
 header {
@@ -41,6 +65,7 @@ header {
     grid-area: header;
     box-sizing: border-box;
     vertical-align: top;
+    position: relative;
 }
 
 .logo,
@@ -52,15 +77,17 @@ nav {
     margin: 0px 40px 0 0;
     height: 35px;
     width: 108px;
-    background: url('../img/Yandex_dom@1x.png') no-repeat bottom;
+    background: url('../img/Yandex_dom.png') no-repeat bottom;
 }
 
 nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
 }
 
 .nav_link {
     display: inline-block;
-    height: 30px;
     padding: 0px 10px;
     opacity: 0.6;
     font-size: 16px;
@@ -99,13 +126,12 @@ main {
 }
 
 .nearest_scripts {
-    width: 250px;
-    float: right;
+    width: 255px;
     position: absolute;
     right: 20px;
     height: 100%;
     top: 0;
-    padding-top: 20px;
+    padding: 20px 0 20px 5px;
     box-sizing: border-box;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -119,7 +145,7 @@ main {
     background: #ddd;
     padding: 20px 0 0 10px;
     box-sizing: border-box;
-/*    overflow-y: hidden;*/
+    /*    overflow-y: hidden;*/
 }
 
 .script_list {
@@ -130,7 +156,7 @@ main {
 
 .script_list_page_wrapper {
     height: 100%;
-    width:100%;
+    width: 100%;
     position: absolute;
     overflow: hidden;
 }
@@ -168,7 +194,7 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 100;
+    z-index: 1;
 }
 
 .script_list > input:checked + label:hover,
@@ -209,24 +235,11 @@ main {
 
 .device_heading {
     display: inline-block;
-    margin: 12px 0 30px 40px;
-}
-
-.device_filter_list,
-.device_filter_element {
-    display: inline-block;
+    margin: 12px 10px 30px 40px;
 }
 
 .device_filter_element {
-    font-size: 14px;
-    padding: 8px 15px;
-    background: #f7f7f7;
-    border-radius: 20px;
     margin: 0 5px 0 0;
-}
-
-.device_filter_element_active {
-    background: #FFD93E;
 }
 
 .device_list {
@@ -250,9 +263,19 @@ footer {
     box-sizing: border-box;
 }
 
+.footer_copy,
+.footer_links {
+    top: 50%;
+    font-size: 12px;
+}
+
 .footer_links {
     position: absolute;
     left: 40px;
+}
+
+.footer_links_element {
+    margin: 0 10px 0 0;
 }
 
 .footer_copy {
@@ -260,8 +283,110 @@ footer {
     right: 40px;
 }
 
-.footer_copy,
-.footer_links {
-    top: 50%;
-    font-size: 12px;
+/*  popup styles  */
+
+.overflow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.50);
+    transition: opacity 500ms;
 }
+
+.overflow_hide {
+    z-index: -1;
+    opacity: 0;
+}
+
+.overflow_show {
+    z-index: 2;
+    opacity: 1;
+    
+}
+
+.bg_blur {
+    filter: blur(3px);
+}
+
+.controller {
+    width:630px;
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    transform: translateX(-50%);
+    left: 50%;
+    display: grid;
+    grid-template: 'content content' 1fr
+                    'ok close' 60px /50% 50%;
+    grid-gap: 20px;
+    display: none;
+}
+
+.controller_content {
+    grid-area: content;
+    padding: 30px 20px 30px;
+    background: #FFF;
+    border-radius: 20px;
+}
+
+.controller_heading {
+    margin: 0 0 8px;
+    font-size: 26px
+}
+
+.controller_status {
+    font-weight: 100;
+    font-size: 14px;
+    margin: 0 0 20px;
+    display: block;
+}
+
+.controller_menu {
+    
+    margin: 0 0 30px;
+}
+
+.controller_data,
+.controller_icon {
+    position: absolute;
+    top: 25px;
+    height: 45px;
+}
+
+.controller_icon {
+    width: 44px;
+    right: 0px;
+    background: url(../img/icon_temperature_2.png) no-repeat ;
+    background-position: left;
+    background-size: contain;
+}
+
+.controller_data {
+    font-size: 40px;
+    font-weight: 600px;
+    right: 50px
+}
+
+.controller_button {
+    border-radius: 20px; 
+    font-weight: 600;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.controller_button_ok {
+    grid-area: ok;
+    background: #FFD93E;
+}
+
+.controller_button_close {
+    grid-area: close;
+}
+
+.controller_slider {
+    height: 60px;
+    width: 600px;
+    background: aqua;
+}
+

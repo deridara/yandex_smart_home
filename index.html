@@ -9,7 +9,27 @@
 </head>
 
 <body>
-    <div class="grid-wrapper">
+
+    <div class="temp_controller controller">
+        <div class="controller_content">
+            <h2 class='controller_heading'>Elgato Eve Degree Connected</h2>
+            <span class='controller_status'>Включено</span>
+            <div class="controller_data">+23</div>
+            <div class="controller_icon"></div>
+            <div class="controller_menu inner_menu">
+                <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
+                <div class="controller_menu_element inner_menu_element">Холодно</div>
+                <div class="controller_menu_element inner_menu_element">Тепло</div>
+                <div class="controller_menu_element inner_menu_element">Жарко</div>
+            </div>
+            
+            <div class="controller_slider temp_slider"></div>
+        </div>
+        <input class='controller_button controller_button_ok' type="button" value='Применить'>
+        <input class='controller_button controller_button_close' type="button" value='Закрыть'>
+
+    </div>
+    <div class="grid_wrapper">
         <header>
             <div class="logo">
 
@@ -70,17 +90,17 @@
             </div>
             <div class="device_wrapper">
                 <h2 class='heading device_heading'>Избранные устройства</h2>
-                <div class='device_filter_list'>
-                    <div class='device_filter_element device_filter_element_active'>Все</div>
-                    <div class='device_filter_element'>Кухня</div>
-                    <div class='device_filter_element'>Зал</div>
-                    <div class='device_filter_element'>Лампочки</div>
-                    <div class='device_filter_element'>Камеры</div>
+                <div class='device_filter_list inner_menu'>
+                    <div class='device_filter_element inner_menu_element inner_menu_element_active'>Все</div>
+                    <div class='device_filter_element inner_menu_element'>Кухня</div>
+                    <div class='device_filter_element inner_menu_element'>Зал</div>
+                    <div class='device_filter_element inner_menu_element'>Лампочки</div>
+                    <div class='device_filter_element inner_menu_element'>Камеры</div>
                 </div>
                 <div class="device_list">
-                    <div class="element_card device_element"></div>
-                    <div class="element_card device_element"></div>
-                    <div class="element_card device_element"></div>
+                    <div class="element_card device_element" id='warm_floor'></div>
+                    <div class="element_card device_element" id='led'></div>
+                    <div class="element_card device_element" id='temp'></div>
                     <div class="element_card device_element"></div>
                     <div class="element_card device_element"></div>
                     <div class="element_card device_element"></div>
@@ -98,7 +118,8 @@
             </div>
             <a href="#" class='footer_copy'>&copy; 2001-2017 ООО &laquo;Яндекс&raquo;</a>
         </footer>
+        <div class="overflow overflow_hide"></div>
     </div>
 </body>
-
+<script src='js/script.js'></script>
 </html>
