@@ -10,12 +10,12 @@
 
 <body>
 
-    <div class="temp_controller controller">
+    <div class="controller controller_hide" id='temp_controller'>
         <div class="controller_content">
             <h2 class='controller_heading'>Elgato Eve Degree Connected</h2>
             <span class='controller_status'>Включено</span>
             <div class="controller_data">+23</div>
-            <div class="controller_icon"></div>
+            <div class="controller_icon temp_icon"></div>
             <div class="controller_menu inner_menu">
                 <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
                 <div class="controller_menu_element inner_menu_element">Холодно</div>
@@ -29,11 +29,48 @@
         <input class='controller_button controller_button_close' type="button" value='Закрыть'>
 
     </div>
+    
+    <div class="controller controller_hide" id='led_controller'>
+        <div class="controller_content">
+            <h2 class='controller_heading'>Xiaomi Yeelight LED Smart Bulb</h2>
+            <span class='controller_status'>Включится в 17:00</span>
+            <div class="controller_icon led_icon"></div>
+            <div class="controller_menu inner_menu">
+                <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
+                <div class="controller_menu_element inner_menu_element">Дневной свет</div>
+                <div class="controller_menu_element inner_menu_element">Вечерний свет</div>
+                <div class="controller_menu_element inner_menu_element">Рассвет</div>
+            </div>
+            
+            <div class="controller_slider led_slider"></div>
+        </div>
+        <input class='controller_button controller_button_ok' type="button" value='Применить'>
+        <input class='controller_button controller_button_close' type="button" value='Закрыть'>
+
+    </div>
+    
+    <div class="controller controller_show" id='floor_controller'>
+        <div class="controller_content">
+            <h2 class='controller_heading'>Xiaomi Warm Floor</h2>
+            <span class='controller_status'>Включено</span>
+            <div class="controller_data">+23</div>
+            <div class="controller_icon floor_icon"></div>
+            
+            <div class="controller_round_slider_wrapper">
+                <div class="controller_round_slider floor_slider"></div>
+                <div class="controller_round_slider_data">+23</div>
+            </div>
+        </div>
+        <input class='controller_button controller_button_ok' type="button" value='Применить'>
+        <input class='controller_button controller_button_close' type="button" value='Закрыть'>
+
+    </div>
+    
     <div class="grid_wrapper">
         <header>
-            <div class="logo">
+            <a href='#' class="logo">
 
-            </div>
+            </a>
             <nav>
                 <a href="#" class='nav_link nav_link_active'>Сводка</a>
                 <a href="#" class='nav_link'>Устройства</a>
@@ -98,14 +135,23 @@
                     <div class='device_filter_element inner_menu_element'>Камеры</div>
                 </div>
                 <div class="device_list">
-                    <div class="element_card device_element" id='warm_floor'></div>
-                    <div class="element_card device_element" id='led'></div>
-                    <div class="element_card device_element" id='temp'></div>
-                    <div class="element_card device_element"></div>
-                    <div class="element_card device_element"></div>
-                    <div class="element_card device_element"></div>
-                    <div class="element_card device_element"></div>
-                    <div class="element_card device_element"></div>
+                   
+                   <input type="radio" name="device_slider" id="device_slider1" checked="checked">
+                    <label for="device_slider1"></label>
+
+                    <input type="radio" name="device_slider" id="device_slider2">
+                    <label for="device_slider2"></label>
+                   
+                    <div class="device_slider">
+                        <div class="element_card device_element" id='warm_floor'></div>
+                        <div class="element_card device_element" id='led'></div>
+                        <div class="element_card device_element" id='temp'></div>
+                        <div class="element_card device_element"></div>
+                        <div class="element_card device_element"></div>
+                        <div class="element_card device_element"></div>
+                        <div class="element_card device_element"></div>
+                        <div class="element_card device_element"></div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -118,7 +164,7 @@
             </div>
             <a href="#" class='footer_copy'>&copy; 2001-2017 ООО &laquo;Яндекс&raquo;</a>
         </footer>
-        <div class="overflow overflow_hide"></div>
+        <div class="overflow overflow_show"></div>
     </div>
 </body>
 <script src='js/script.js'></script>
