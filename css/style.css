@@ -223,6 +223,19 @@ main {
     display: inline-block;
 }
 
+.narest_scripts_arrow {
+    position: absolute;
+    bottom: 0px;
+    right: 110px;
+    transform: translateY(-100%);
+    z-index: 3;
+    transition: opacity .5s;
+}
+
+.nearest_scripts:hover ~ .narest_scripts_arrow {
+    opacity: 0;
+}
+
 .nearest_scripts {
     width: 255px;
     position: absolute;
@@ -735,6 +748,10 @@ footer {
         color: #333333;
     }
 
+    .narest_scripts_arrow {
+        display: none;
+    }
+    
     .nearest_scripts {
         position: absolute;
         width: 100%;

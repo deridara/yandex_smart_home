@@ -1,5 +1,3 @@
-document.querySelector('#nav_mobile').addEventListener('change', () => {console.log('changed')})
-
 //   device list scroll
 
 const deviceScroll = document.querySelector('.device_slider');
@@ -11,7 +9,7 @@ deviceRadio1.addEventListener('change', () => {
 });
 
 deviceRadio2.addEventListener('change', () => {
-    scrollTo(deviceScroll, 500, 300);
+    scrollTo(deviceScroll, 700, 300);
 })
 
 const scrollTo = (element, to, duration) => {
@@ -92,6 +90,5 @@ const showControllerById = (id) => {
 
 const hideActiveController = () => {
     const controller = document.querySelector('.controller_show');
-    console.log(controller, controller.classList);
     controller.classList.value = 'controller controller_hide';
 }
