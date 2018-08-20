@@ -1,3 +1,5 @@
+document.querySelector('#nav_mobile').addEventListener('change', () => {console.log('changed')})
+
 //   device list scroll
 
 const deviceScroll = document.querySelector('.device_slider');
@@ -18,12 +20,10 @@ const scrollTo = (element, to, duration) => {
         currentTime = 0;
         increment = 20;
         step = change / (duration/increment);
-        console.log(start, to);
 
     const animateScroll = function () {
         currentTime += increment;
         element.scrollLeft = element.scrollLeft + step;
-        console.log(element.scrollLeft, step);
         if (currentTime < duration) {
             setTimeout(animateScroll, increment);
         }

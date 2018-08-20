@@ -16,46 +16,53 @@
             <span class='controller_status'>Включено</span>
             <div class="controller_data">+23</div>
             <div class="controller_icon temp_icon"></div>
-            <div class="controller_menu inner_menu">
-                <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
-                <div class="controller_menu_element inner_menu_element">Холодно</div>
-                <div class="controller_menu_element inner_menu_element">Тепло</div>
-                <div class="controller_menu_element inner_menu_element">Жарко</div>
+            <div class="controller_menu_wrapper">
+                <div class="controller_menu inner_menu">
+                    <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
+                    <div class="controller_menu_element inner_menu_element">Холодно</div>
+                    <div class="controller_menu_element inner_menu_element">Тепло</div>
+                    <div class="controller_menu_element inner_menu_element">Жарко</div>
+                </div>
             </div>
-            
-            <div class="controller_slider temp_slider"></div>
+
+            <div class="controller_slider temp_slider">
+                <p class="min_temp">–10</p>
+                <p class="max_temp">+30</p>
+            </div>
         </div>
         <input class='controller_button controller_button_ok' type="button" value='Применить'>
         <input class='controller_button controller_button_close' type="button" value='Закрыть'>
 
     </div>
-    
+
     <div class="controller controller_hide" id='led_controller'>
         <div class="controller_content">
             <h2 class='controller_heading'>Xiaomi Yeelight LED Smart Bulb</h2>
             <span class='controller_status'>Включится в 17:00</span>
             <div class="controller_icon led_icon"></div>
-            <div class="controller_menu inner_menu">
-                <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
-                <div class="controller_menu_element inner_menu_element">Дневной свет</div>
-                <div class="controller_menu_element inner_menu_element">Вечерний свет</div>
-                <div class="controller_menu_element inner_menu_element">Рассвет</div>
+            <div class="controller_menu_wrapper">
+                <div class="controller_menu inner_menu">
+                    <div class="controller_menu_element inner_menu_element inner_menu_element_active">Вручную</div>
+                    <div class="controller_menu_element inner_menu_element">Дневной свет</div>
+                    <div class="controller_menu_element inner_menu_element">Вечерний свет</div>
+                    <div class="controller_menu_element inner_menu_element">Рассвет</div>
+                </div>
             </div>
-            
+
             <div class="controller_slider led_slider"></div>
         </div>
         <input class='controller_button controller_button_ok' type="button" value='Применить'>
         <input class='controller_button controller_button_close' type="button" value='Закрыть'>
 
     </div>
-    
-    <div class="controller controller_show" id='floor_controller'>
+
+    <div class="controller controller_hide" id='floor_controller'>
         <div class="controller_content">
             <h2 class='controller_heading'>Xiaomi Warm Floor</h2>
             <span class='controller_status'>Включено</span>
             <div class="controller_data">+23</div>
             <div class="controller_icon floor_icon"></div>
-            
+
             <div class="controller_round_slider_wrapper">
                 <div class="controller_round_slider floor_slider"></div>
                 <div class="controller_round_slider_data">+23</div>
@@ -65,12 +72,15 @@
         <input class='controller_button controller_button_close' type="button" value='Закрыть'>
 
     </div>
-    
+
     <div class="grid_wrapper">
-        <header>
+        <header class='stucked_header'>
             <a href='#' class="logo">
 
             </a>
+
+            <input type="checkbox" id='nav_mobile'>
+            <label for="nav_mobile" class='nav_mobile_ico'></label>
             <nav>
                 <a href="#" class='nav_link nav_link_active'>Сводка</a>
                 <a href="#" class='nav_link'>Устройства</a>
@@ -82,11 +92,49 @@
             <div class="basic_wrapper">
                 <h2 class='heading basic_heading'>Главное</h2>
                 <div class="basic">
+
+                    <div class="basic_text">
+                        <h2 class='greeting'>Привет, Геннадий!</h2>
+                        <p class="basic_status">Двери и окна закрыты, сигнализация включена.</p>
+                        <div>
+                            <span class='basic_temp_label home_temp_label'>Дома</span>
+                            <span class='basic_temp_label out_temp_label'>За окном</span>
+                        </div>
+                        <div class="temp_data home_temp_data">+23</div>
+                        <div class="temp_data out_temp_data">+19</div>
+                    <img src="img/cloud-drizzle.png" class='weather_ico' alt="ico">
+                    </div>
                     <div class="nearest_scripts">
-                        <div class="element_card nearest_scripts_element"></div>
-                        <div class="element_card nearest_scripts_element"></div>
-                        <div class="element_card nearest_scripts_element"></div>
-                        <div class="element_card nearest_scripts_element"></div>
+
+                        <div class="element_card nearest_scripts_element">
+                            <img src="img/icon_temperature@1x.png" alt="temp" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Philips Cooler</p>
+                                <p class='device_status'>Начнет охлаждать в 16:30</p>
+                            </div>
+                        </div>
+
+                        <div class="element_card nearest_scripts_element">
+                            <img src="img/icon_sun@1x.png" alt="temp" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Xiaomi Yeelight LED Smart Bulb</p>
+                                <p class='device_status'>Включится в 17:00</p>
+                            </div>
+                        </div>
+                        <div class="element_card nearest_scripts_element">
+                            <img src="img/icon_temperature@1x.png" alt="temp" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Philips Cooler</p>
+                                <p class='device_status'>Начнет охлаждать в 16:30</p>
+                            </div>
+                        </div>
+                        <div class="element_card nearest_scripts_element">
+                            <img src="img/icon_sun@1x.png" alt="temp" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Xiaomi Yeelight LED Smart Bulb</p>
+                                <p class='device_status'>Включится в 17:00</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,30 +143,109 @@
                 <div class="script_list">
 
                     <input type="radio" name="slider" id="slider1" checked="checked">
-                    <label for="slider0"></label>
-                    <label for="slider2"></label>
+                    <label for="slider0" class='script_slider_label'></label>
+                    <label for="slider2" class='script_slider_label'></label>
 
                     <input type="radio" name="slider" id="slider2">
-                    <label for="slider1"></label>
-                    <label for="slider3"></label>
+                    <label for="slider1" class='script_slider_label'></label>
+                    <label for="slider3" class='script_slider_label'></label>
 
                     <div class="script_list_page_wrapper">
                         <div class="script_list_page">
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element">
+                                <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Выключить свет во всем доме и во дворе</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_scheduled.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Я ухожу</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Включить свет в коридоре</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_temperature_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Набрать горячую ванну</p>
+                                    <p class="device_status">Начнется в 18:00</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_temperature_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Сделать пол теплым во всей квартире</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_scheduled.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Перевести часы на зимнее время</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_temperature_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Поставить чайник</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_temperature@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Включить сушилку для обуви</p>
+                                </div>
+                            </div>
+                            <div class="element_card script_element">
+                                <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Включить подсветку для растений</p>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="script_list_page">
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
-                            <div class="element_card script_element"></div>
+                            <div class="element_card script_element">
+                                <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Режим "Свидание"</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_sun@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Ночник</p>
+                                </div>
+
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_sun@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Включить свет во дворе</p>
+                                </div>
+                            </div>
+
+                            <div class="element_card script_element">
+                                <img src="img/icon_temperature@1x.png" alt="ico" class="element_card_icon">
+                                <div class="element_card_text">
+                                    <p class="device_name">Подогрев кресла</p>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
@@ -127,6 +254,8 @@
             </div>
             <div class="device_wrapper">
                 <h2 class='heading device_heading'>Избранные устройства</h2>
+                <input type="checkbox" id='device_menu' checked='checked'>
+                <label for="device_menu" id='device_menu_label'></label>
                 <div class='device_filter_list inner_menu'>
                     <div class='device_filter_element inner_menu_element inner_menu_element_active'>Все</div>
                     <div class='device_filter_element inner_menu_element'>Кухня</div>
@@ -135,22 +264,83 @@
                     <div class='device_filter_element inner_menu_element'>Камеры</div>
                 </div>
                 <div class="device_list">
-                   
-                   <input type="radio" name="device_slider" id="device_slider1" checked="checked">
-                    <label for="device_slider1"></label>
+
+                    <input type="radio" name="device_slider" id="device_slider1" checked="checked">
+                    <label for="device_slider1" class='device_slider_label'></label>
 
                     <input type="radio" name="device_slider" id="device_slider2">
-                    <label for="device_slider2"></label>
-                   
+                    <label for="device_slider2" class='device_slider_label'></label>
+
                     <div class="device_slider">
-                        <div class="element_card device_element" id='warm_floor'></div>
-                        <div class="element_card device_element" id='led'></div>
-                        <div class="element_card device_element" id='temp'></div>
-                        <div class="element_card device_element"></div>
-                        <div class="element_card device_element"></div>
-                        <div class="element_card device_element"></div>
-                        <div class="element_card device_element"></div>
-                        <div class="element_card device_element"></div>
+                        <div class="element_card device_element" id='led'>
+
+                            <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Xiaomi Yeelight LED Smart Bulb</p>
+                                <p class='device_status'>Включится в 17:00</p>
+                            </div>
+                        </div>
+
+                        <div class="element_card device_element" id='warm_floor'>
+                            <img src="img/icon_temperature_2@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Warm Floor</p>
+                                <p class='device_status'>Включено</p>
+                            </div>
+                        </div>
+
+                        <div class="element_card device_element" id='temp'>
+                            <img src="img/icon_temperature@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Elgato Eve Degree Connected</p>
+                                <p class='device_status'>Выключено до 17:00</p>
+                            </div>
+                        </div>
+                        <div class="element_card device_element">
+                            <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name"> Xiaomi Mi Air Purifier 2S</p>
+                                <p class='device_status'>Включено</p>
+                            </div>
+                        </div>
+                        <div class="element_card device_element">
+                            <img src="img/icon_sun@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">D-Link Omna 180 Cam</p>
+                                <p class='device_status'>Включится в 17:00</p>
+                            </div>
+                        </div>
+                        <div class="element_card device_element">
+                            <img src="img/icon_temperature@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Philips Cooler</p>
+                                <p class='device_status'>Начнет охлаждать в 16:30</p>
+                            </div>
+
+                        </div>
+                        <div class="element_card device_element">
+
+                            <img src="img/icon_sun@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">LIFX Mini Day & Dusk A60 E27</p>
+                                <p class='device_status'>Включится в 17:00</p>
+                            </div>
+
+                        </div>
+                        <div class="element_card device_element">
+                            <img src="img/icon_sun_2@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name"> Xiaomi Mi Air Purifier 2S</p>
+                                <p class='device_status'>Включено</p>
+                            </div>
+                        </div>
+                        <div class="element_card device_element">
+                            <img src="img/icon_sun@1x.png" alt="ico" class="element_card_icon">
+                            <div class="element_card_text">
+                                <p class="device_name">Philips Zhirui</p>
+                                <p class='device_status'>Выключено</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,8 +354,9 @@
             </div>
             <a href="#" class='footer_copy'>&copy; 2001-2017 ООО &laquo;Яндекс&raquo;</a>
         </footer>
-        <div class="overflow overflow_show"></div>
+        <div class="overflow overflow_hide"></div>
     </div>
 </body>
 <script src='js/script.js'></script>
+
 </html>
