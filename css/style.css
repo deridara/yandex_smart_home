@@ -15,7 +15,7 @@ body {
 .heading {
     color: #333;
     font-size: 18px;
-    font-weight: 600px;
+    font-weight: 600;
 }
 
 a {
@@ -155,7 +155,6 @@ nav {
 .nav_link_active {
     opacity: 1;
 }
-
 
 
 /* ///////////////  main ///////////////  */
@@ -346,7 +345,7 @@ main {
 
 
 
-/* ///////////////  device ///////////////  */
+/* ///////////////  devices ///////////////  */
 
 .device_wrapper {
     grid-area: devices;
@@ -456,7 +455,7 @@ footer {
     right: 40px;
 }
 
-/*  popup styles  */
+/*///////////////  popup styles  ///////////////*/
 
 .overflow {
     position: absolute;
@@ -545,7 +544,7 @@ footer {
 
 .controller_data {
     font-size: 40px;
-    font-weight: 600px;
+    font-weight: 600;
     right: 50px
 }
 
@@ -587,7 +586,6 @@ footer {
 
 .led_slider {
     background: url(../img/icon_sun_min.png) no-repeat 2% 50%, url(../img/icon_sun_max.png) no-repeat 98% 50%, linear-gradient(85deg, #FFE682 2%, #FF9E00 98%);
-    background-size:
 }
 
 .temp_slider {
@@ -969,7 +967,6 @@ footer {
 
     .led_slider {
         background: url(../img/icon_sun_min.png) no-repeat 50% 96%, url(../img/icon_sun_max.png) no-repeat 50% 4%, linear-gradient(45deg, #FFE682 2%, #FF9E00 98%);
-        background-size:
     }
 
     .temp_slider {
@@ -993,9 +990,11 @@ footer {
     .temp_slider .max_temp {
         top: 0px;
     }
+    
     .controller_round_slider_wrapper {
         height: 400px;
     }
+    
     .controller_round_slider_data,
     .floor_slider {
         top: 50%;
