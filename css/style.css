@@ -718,7 +718,7 @@ footer {
     }
 
     .basic_wrapper {
-        height: 50vh;
+        height: 360px;
         width: 100%;
         padding: 20px 30px;
         box-sizing: border-box;
@@ -729,11 +729,12 @@ footer {
     }
 
 
-    .basic {
-        width: 90%;
+    .basic {top: auto;
         height: 90%;
+        width: 90%;
         left: 50%;
-        transform: translateX(-50%)
+        transform: translateX(-50%);
+        padding-bottom: 200px;
     }
 
     .basic_text {
